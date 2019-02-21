@@ -1,0 +1,33 @@
+<Provenance>
+ <target>
+  <reference value="TARGET-REF" />
+ </target>
+ <recorded value="PROVENANCE-RECORDED" />
+ <agent>
+  <role>
+   <coding>
+    <system  value="http://terminology.hl7.org/CodeSystem/provenance-participant-type" />
+    <code    value="assembler" />
+    <display value="Assembler" />
+   </coding>
+   <text>Assembler</text>
+  </role>
+  <whoReference>
+   <reference value="Device/194" />
+   <display   value="WUSTL Provenance Machine" />
+  </whoReference>
+ </agent>
+
+ <entity>
+  <role>
+   <coding>
+    <system  value="http://hl7.org/fhir/provenance-entity-role" />
+    <code    value="source" />
+    <display value="Source" />
+   </coding>
+  </role>
+  <whatReference>
+   <reference value="DocumentReference/196" />
+  </whatReference>
+ </entity>
+</Provenance>

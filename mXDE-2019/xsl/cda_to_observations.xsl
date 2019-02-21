@@ -10,8 +10,22 @@
     <xsl:apply-templates select="//cda:observation" />
   </xsl:template>
   
+<!--
+  <xsl:template match="cda:patientRole">
+    <xsl:value-of select="id/@extension" />
+    <xsl:text>,</xsl:text>
+    <xsl:value-of select="id/@root" />
+    <xsl:text>,</xsl:text>
+  </xsl:template>
+-->
+
   <xsl:template match="cda:observation">
     <xsl:text>Observation,</xsl:text>
+    <xsl:value-of select="//cda:recordTarget/cda:patientRole/cda:id/@extension" />
+    <xsl:text>,</xsl:text>
+    <xsl:value-of select="//cda:recordTarget/cda:patientRole/cda:id/@root" />
+    <xsl:text>,</xsl:text>
+
     <xsl:value-of select="descendant::cda:code/@code" />
     <xsl:text>,</xsl:text>
     <xsl:value-of select="descendant::cda:statusCode/@code" />

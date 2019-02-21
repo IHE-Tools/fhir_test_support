@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Credits
+
+ Document History:
+   + 2019.02.19 Created document with document templates. No other content (yet)
+ 
+ Disclaimers:
+   + Not a real patient
+   + Values not actually measured
+   + Values may not reflect plausible clinical data
+ -->
+<ClinicalDocument
+  xmlns="urn:hl7-org:v3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:sdtc="urn:hl7-org:sdtc">
+	<realmCode code="US"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- CCD template ID-->
+	<templateId root="1.3.6.1.4.1.19376.1.3.3"/>
+	<!-- Globally unique identifier for the document  -->
+	<id extension="GUID" root="FIX"/>
+	<code code="11502-2" displayName="LABORATORY REPORT.TOTAL"
+		codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+
+	<title>Patient Chart Summary</title>
+	<effectiveTime value="201308151030-0800"/>
+	<confidentialityCode code="N" displayName="normal" codeSystem="2.16.840.1.113883.5.25"
+		codeSystemName="Confidentiality"/>
+	<languageCode code="en-US"/>
+	<setId extension="sTT988" root="2.16.840.1.113883.19.5.99999.19"/>
+
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="2019.100.1" root="1.3.6.1.4.1.21367.13.20.1000"/>
+			<addr>
+				<streetAddressLine>4525 Scott Ave</streetAddressLine>
+				<city>St. Louis</city>
+				<state>MO</state>
+				<postalCode>63110</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom value="tel:+1(314)555-0000"/>
+			<patient>
+				<name>
+					<given>One</given>
+					<family>Mxde</family>
+				</name>
+				<administrativeGenderCode code="M" displayName="Male"
+					codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender"/>
+				<birthTime value="19601213"/>
+
+			</patient>
+		</patientRole>
+	</recordTarget>
+
+	<author>
+		<time value="201902171155-0600"/>
+		<assignedAuthor>
+			<id extension="2019.200.1" root="1.3.6.1.4.1.21367.13.20.1000"/>
+			<assignedPerson>
+				<name>
+					<given>Moe</given>
+					<family>Howard</family>
+					<suffix>M.D.</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="WUSTL" root="1.3.6.1.4.1.21367.13.20.1000"/>
+				<name>WU Physician Group</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+	<!-- ******************************************************** CDA Body ******************************************************** -->
+	<component>
+		<structuredBody>
+			
+      <component>
+        <section ID="PAYMENT">
+          <code code="2" codeSystem="2.16.840.1.113883.2.9.6.1.48.1"
+            codeSystemName="Tipologie importi" codeSystemVersion="1"
+            displayName="Importi specialistici"/>
+          <entry>
+            <observation classCode="OBS" moodCode="DEF">
+              <code code="2.6" codeSystem="2.16.840.1.113883.2.9.6.1.48.2"
+                codeSystemName="Dettaglio importi" codeSystemVersion="1"
+                displayName="Costo totale prestazioni specialistiche"/>
+              <value xsi:type="MO" value="15.20"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section ID="SECT-1">
+          <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+          <code code="18719-5" codeSystem="2.16.840.1.113883.6.1" codeSystemVersion="2.19"
+            codeSystemName="LOINC" displayName="CHIMICA CLINICA"/>
+          <title>CHIMICA CLINICA</title>
+          <component>
+            <section>
+              <templateId root="1.3.6.1.4.1.19376.1.3.3.2.2"/>
+              <code code="GLU" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                codeSystemVersion="1.0" codeSystemName="Laboratorio" displayName="P-GLUCOSIO"/>
+              <title>BIOCHIMICA</title>
+              <text>
+                <table border="1" width="100%">
+                  <tbody>
+                    <tr>
+                      <th>Esame</th>
+                      <th>Esito</th>
+                      <th>Abnormal Flag</th>
+                      <th>Unità di Misura</th>
+                      <th>Range di Riferimento</th>
+                    </tr>
+                    <tr>
+                      <th>P-GLUCOSIO</th>
+                      <td>130</td>
+                      <td>*</td>
+                      <td>mg/dL</td>
+                      <td>67 - 101</td>
+                    </tr>
+                    <tr>
+                      <th>P-GLUCOSIO</th>
+                      <td>7.2</td>
+                      <td>*</td>
+                      <td>mmol/L</td>
+                      <td>3.7-5.6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+              <entry typeCode="DRIV">
+                <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+                <act moodCode="EVN" classCode="ACT">
+                  <code code="GLU" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                    codeSystemVersion="1.0" codeSystemName="Laboratorio" displayName="P-GLUCOSIO"/>
+                  <statusCode code="completed"/>
+                  <specimen typeCode="SPC">
+                    <specimenRole classCode="SPEC">
+                      <specimenPlayingEntity>
+                        <code code="PLAS" codeSystem="2.16.840.1.113883.5.129"
+                          codeSystemName="SpecimenType">
+                          <translation code="P" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                            codeSystemName="Laboratorio"/>
+                        </code>
+                      </specimenPlayingEntity>
+                    </specimenRole>
+                  </specimen>
+                  <entryRelationship typeCode="COMP">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="GLU" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                        codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                        displayName="P-GLUCOSIO">
+                        <translation code="2345-7" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20180120110049+0100"/>
+                      <value xsi:type="PQ" value="130" unit="mg/dL"/>
+                      <interpretationCode code="H" codeSystem="2.16.840.1.113883.5.83"
+                        codeSystemName="HL7 Observation Interpretation" displayName="H"/>
+                      <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                          <value xsi:type="IVL_PQ">
+                            <low value="67" unit="mg/dL"/>
+                            <high value="101" unit="mg/dL"/>
+                          </value>
+                          <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                        </observationRange>
+                      </referenceRange>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="COMP">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="GLU" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                        codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                        displayName="P-GLUCOSIO">
+                        <translation code="14749-6" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20180120110049+0100"/>
+                      <value xsi:type="PQ" value="7.2" unit="mmol/L"/>
+                      <interpretationCode code="H" codeSystem="2.16.840.1.113883.5.83"
+                        codeSystemName="HL7 Observation Interpretation" displayName="H"/>
+                      <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                          <value xsi:type="IVL_PQ">
+                            <low value="3.7" unit="mmol/L"/>
+                            <high value="5.6" unit="mmol/L"/>
+                          </value>
+                          <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                        </observationRange>
+                      </referenceRange>
+                    </observation>
+                  </entryRelationship>
+                </act>
+              </entry>
+            </section>
+          </component>
+          <component>
+            <section>
+              <templateId root="1.3.6.1.4.1.19376.1.3.3.2.2"/>
+              <code code="NA" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                displayName="P-SODIO                                              -     {RP       {D">
+                <translation code="2951-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                  codeSystemVersion="2.19"/>
+              </code>
+              <title>BIOCHIMICA</title>
+              <text>
+                <table border="1" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Esame</th>
+                      <th>Esito</th>
+                      <th>Abnormal Flag</th>
+                      <th>Unita' di Misura</th>
+                      <th>Range di riferimento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>P-SODIO</th>
+                      <td>139</td>
+                      <td/>
+                      <td>mmol/L</td>
+                      <td>136 - 145</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+              <entry typeCode="DRIV">
+                <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="NA" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                    codeSystemVersion="1.0"
+                    displayName="P-SODIO                                              -     {RP       {D">
+                    <translation code="2951-2" codeSystem="2.16.840.1.113883.6.1"
+                      codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                  </code>
+                  <statusCode code="completed"/>
+                  <specimen typeCode="SPC">
+                    <specimenRole classCode="SPEC">
+                      <specimenPlayingEntity>
+                        <code code="PLAS" codeSystem="2.16.840.1.113883.5.129"
+                          codeSystemName="SpecimenType" displayName="Plasma"/>
+                      </specimenPlayingEntity>
+                    </specimenRole>
+                  </specimen>
+                  <entryRelationship typeCode="COMP">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="NA" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                        codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                        displayName="P-SODIO                                              -     {RP       {D">
+                        <translation code="2951-2" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20180120110049+0100"/>
+                      <value xsi:type="PQ" value="139" unit="mmol/L"/>
+                      <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"
+                        codeSystemName="HL7 Observation Interpretation" displayName="N"/>
+                      <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                          <value xsi:type="IVL_PQ">
+                            <low value="136" unit="mmol/L"/>
+                            <high value="145" unit="mmol/L"/>
+                          </value>
+                          <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                        </observationRange>
+                      </referenceRange>
+                    </observation>
+                  </entryRelationship>
+                </act>
+              </entry>
+            </section>
+          </component>
+          <component>
+            <section>
+              <templateId root="1.3.6.1.4.1.19376.1.3.3.2.2"/>
+              <code code="K" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                displayName="P-POTASSIO                                           -     {RP       {D      errore totale &lt;5%"/>
+              <title>BIOCHIMICA</title>
+              <text>
+                <table border="1" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Esame</th>
+                      <th>Esito</th>
+                      <th>Abnormal Flag</th>
+                      <th>Unita' di Misura</th>
+                      <th>Range di riferimento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>P-POTASSIO</th>
+                      <td>4.1</td>
+                      <td/>
+                      <td>mmol/L</td>
+                      <td>3.4 - 4.5</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+              <entry typeCode="DRIV">
+                <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="K" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                    codeSystemVersion="1.0" displayName="P-POTASSIO">
+                    <translation code="2823-3" codeSystem="2.16.840.1.113883.6.1"
+                      codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                  </code>
+                  <statusCode code="completed"/>
+                  <specimen typeCode="SPC">
+                    <specimenRole classCode="SPEC">
+                      <specimenPlayingEntity>
+                        <code code="PLAS" codeSystem="2.16.840.1.113883.5.129"
+                          codeSystemName="SpecimenType" displayName="Plasma"/>
+                      </specimenPlayingEntity>
+                    </specimenRole>
+                  </specimen>
+                  <entryRelationship typeCode="COMP">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <code code="K" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                        codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                        displayName="P-POTASSIO - {RP {D errore totale &lt;5%">
+                        <translation code="2823-3" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                      </code>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20180120110049+0100"/>
+                      <value xsi:type="PQ" value="4.1" unit="mmol/L"/>
+                      <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"
+                        codeSystemName="HL7 Observation Interpretation" displayName="N"/>
+                      <referenceRange typeCode="REFV">
+                        <observationRange classCode="OBS" moodCode="EVN.CRT">
+                          <value xsi:type="IVL_PQ">
+                            <low value="3.4" unit="mmol/L"/>
+                            <high value="4.5" unit="mmol/L"/>
+                          </value>
+                          <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                        </observationRange>
+                      </referenceRange>
+                    </observation>
+                  </entryRelationship>
+                </act>
+              </entry>
+            </section>
+          </component>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+          <code code="26436-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+            displayName="Laboratorio"/>
+          <component>
+            <section>
+              <templateId root="1.3.6.1.4.1.19376.1.3.3.2.2"/>
+              <code code="HBGLI" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                codeSystemName="Laboratorio" codeSystemVersion="1.0" displayName="Gruppo HBA1C"/>
+              <title>METAB.SPEC</title>
+              <text>
+                <table border="1" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Esame</th>
+                      <th>Esito</th>
+                      <th>Abnormal Flag</th>
+                      <th>Unita' di Misura</th>
+                      <th>Range di riferimento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>B-HbA1c (Hb Glicata) -</th>
+                      <td>46</td>
+                      <td>*</td>
+                      <td>mmol/mol</td>
+                      <td>20 - 42</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+              <entry typeCode="DRIV">
+                <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="HBGLI" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                    codeSystemVersion="1.0" displayName="Gruppo HBA1C"/>
+                  <statusCode code="completed"/>
+                  <specimen typeCode="SPC">
+                    <specimenRole classCode="SPEC">
+                      <specimenPlayingEntity>
+                        <code code="PLAS" codeSystem="2.16.840.1.113883.5.129"
+                          codeSystemName="SpecimenType" displayName="Plasma"/>
+                      </specimenPlayingEntity>
+                    </specimenRole>
+                  </specimen>
+                  <entryRelationship typeCode="COMP">
+                    <organizer classCode="BATTERY" moodCode="EVN">
+                      <code code="HBGLI" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                        codeSystemName="Laboratorio" codeSystemVersion="1.0"/>
+                      <statusCode code="completed"/>
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                          <code code="GLIHB" codeSystem="2.16.840.1.113883.2.9.2.50901.6.1"
+                            codeSystemName="Laboratorio" codeSystemVersion="1.0"
+                            displayName="B-HbA1c (Hb Glicata)                                 -     {RP       {D                                       Livello Decisionale :              &gt; 48                                       per la diagnosi di diabete">
+                            <translation code="59261-8" codeSystem="2.16.840.1.113883.6.1"
+                              codeSystemName="LOINC" codeSystemVersion="2.19"/>
+                          </code>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20180120110049+0100"/>
+                          <value xsi:type="PQ" value="46" unit="mmol/mol"/>
+                          <interpretationCode code="H" codeSystem="2.16.840.1.113883.5.83"
+                            codeSystemName="HL7 Observation Interpretation" displayName="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange classCode="OBS" moodCode="EVN.CRT">
+                              <value xsi:type="IVL_PQ">
+                                <low value="20" unit="mmol/mol"/>
+                                <high value="42" unit="mmol/mol"/>
+                              </value>
+                              <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </component>
+                    </organizer>
+                  </entryRelationship>
+                </act>
+              </entry>
+            </section>
+          </component>
+        </section>
+      </component>
+
+		</structuredBody>
+	</component>
+</ClinicalDocument>

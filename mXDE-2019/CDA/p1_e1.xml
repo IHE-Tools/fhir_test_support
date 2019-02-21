@@ -22,12 +22,12 @@
 	<templateId root="2.16.840.1.113883.10.20.22.1.2" extension="2015-08-01"/>
 	<templateId root="2.16.840.1.113883.10.20.22.1.2"/>
 	<!-- Globally unique identifier for the document  -->
-	<id extension="TT988" root="2.16.840.1.113883.19.5.99999.1"/>
+	<id extension="GUID" root="FIX"/>
 	<code code="34133-9" displayName="Summarization of Episode Note"
 		codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
 
 	<title>Patient Chart Summary</title>
-	<effectiveTime value="201308151030-0800"/>
+	<effectiveTime value="201902171155-0600"/>
 	<confidentialityCode code="N" displayName="normal" codeSystem="2.16.840.1.113883.5.25"
 		codeSystemName="Confidentiality"/>
 	<languageCode code="en-US"/>
@@ -119,7 +119,7 @@
 						<organizer classCode="BATTERY" moodCode="EVN">
 							<templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.1"/>
-							<id root="FIX"/>
+							<id root="GUID"/>
 							<code code="271062006" displayName="Fasting blood glucose measurement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
 							<statusCode code="completed"/>
 							<effectiveTime>
@@ -130,7 +130,7 @@
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
 									<templateId root="2.16.840.1.113883.10.20.22.4.2"/>
-									<id root="FIX"/>
+									<id root="GUID"/>
 									<code code="32016-8" displayName="Glucose [Mass/volume] in Capillary blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
 									<statusCode code="completed"/>
 									<effectiveTime value="201902171155-0600"/>
@@ -180,7 +180,7 @@
 							<templateId root="2.16.840.1.113883.10.20.22.4.26"
 								extension="2015-08-01"/>
 							<templateId root="2.16.840.1.113883.10.20.22.4.26"/>
-							<id root="FIX"/>
+							<id root="GUID"/>
 							<code code="46680005" codeSystem="2.16.840.1.113883.6.96"
 								codeSystemName="SNOMED CT" displayName="Vital signs"/>
 							<statusCode code="completed"/>
@@ -193,7 +193,7 @@
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"
 										extension="2014-06-09"/>
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-									<id root="FIX"/>
+									<id root="GUID"/>
 									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC" displayName="Height"/>
 									<statusCode code="completed"/>
@@ -207,7 +207,7 @@
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"
 										extension="2014-06-09"/>
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-									<id root="FIX"/>
+									<id root="GUID"/>
 									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC"
 										displayName="Patient Body Weight - Measured"/>
@@ -222,7 +222,7 @@
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"
 										extension="2014-06-09"/>
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-									<id root="FIX"/>
+									<id root="GUID"/>
 									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC" displayName="Intravascular Systolic"/>
 									<statusCode code="completed"/>
@@ -236,7 +236,7 @@
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"
 										extension="2014-06-09"/>
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-									<id root="FIX"/>
+									<id root="GUID"/>
 									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC" displayName="BP Diastolic"/>
 									<statusCode code="completed"/>
@@ -250,7 +250,7 @@
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"
 										extension="2014-06-09"/>
 									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-									<id root="FIX"/>
+									<id root="GUID"/>
 									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1"
 										codeSystemName="LOINC" displayName="Heart rate"/>
 									<statusCode code="completed"/>

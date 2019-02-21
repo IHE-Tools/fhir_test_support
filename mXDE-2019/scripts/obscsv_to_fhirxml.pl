@@ -75,8 +75,32 @@ sub lookup_category_xml {
 sub lookup_system {
  my ($code_system_oid) = @_;
 
- return "http://loinc.org" if ($code_system_oid eq "2.16.840.1.113883.6.1");
- die "Could not lookup coding system for this OID: $code_system_oid";
+ my %h = (
+   "2.16.840.1.113883.6.1" => "http://loinc.org",
+   "2.16.840.1.113883.2.9.6.1.48.2" => "http://arsenal.it",
+   "2.16.840.1.113883.2.9.2.50901.6.1" => "http://arsenal.it/lab"
+ );
+
+ my $system_string = $h{$code_system_oid};
+
+ die "Could not lookup coding system for this OID: $code_system_oid"
+	if ($system_string eq "");
+ return $system_string;
+}
+
+sub lookup_patient_resource {
+ my ($doc_patient_id, $doc_pat_id_assigner) = @_;
+
+ my %h = (
+   "1.3.6.1.4.1.21367.13.20.1000:2019.100.1" => "49"
+ );
+
+ my $key_value = $doc_pat_id_assigner . ":" . $doc_patient_id;
+
+ $pat_resource = $h{$key_value};
+ die "No Patient Resource found for this combination ($doc_pat_id_assigner, $doc_patient_id)\n" if ($pat_resource eq "");
+
+ return $pat_resource;
 }
 
 sub lookup_unit {
@@ -106,22 +130,37 @@ sub translate_to_date {
  return $date_string;
 }
 
+sub xml_escape {
+ my ($s) = @_;
+ $s =~ s/&/&amp;/sg;
+ $s =~ s/</&lt;/sg;
+ $s =~ s/>/&gt;/sg;
+ $s =~ s/"/&quot;/sg;
+ return $s;
+}
 
-sub process_line{
+
+sub process_line {
  my ($line, $template) = @_;
- my ($obs, $code_value, $status, $time_stamp, $code_system_oid, 
+ my ($obs, $doc_patient_id, $doc_pat_id_assigner,
+	$code_value, $status, $time_stamp, $code_system_oid, 
 	$code_meaning, $obs_value, $obs_coded_unit) = (split /,/, $line);
  return if (!$obs);
  return if ($obs ne "Observation");
 
+ $code_meaning = xml_escape($code_meaning);
+ $obs_value    = xml_escape($obs_value);
+
  my $code_system = lookup_system($code_system_oid);
  my $obs_date    = translate_to_date($time_stamp);
+ my $patient_resource = lookup_patient_resource($doc_patient_id, $doc_pat_id_assigner);
 
  my $obs_system = "http://unitsofmeasure.org";
  my $obs_unit = lookup_unit ($code_value, $obs_coded_unit);
  my $category_xml = lookup_category_xml($code_value);
 
  my $output = $template;
+ $output =~ s/PATIENT-REFERENCE/$patient_resource/g;
  $output =~ s/CATEGORY/$category_xml/g;
 
  $output =~ s/OBS-UNIT/$obs_unit/g;
