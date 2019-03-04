@@ -1,4 +1,12 @@
-<Observation>
+<Observation xmlns="http://hl7.org/fhir">
+ <identifier>
+  <system value="urn:oid:OBS-SYSTEM"/> <!-- fix -->
+  <value value="OBS-GUID"/>
+  <assigner>
+   <reference value="OBS-SYSTEM"/> <!-- fix -->
+   <display value="Observation Creator"/>
+  </assigner>
+ </identifier>
  <status value="final" />
  CATEGORY
  <code>
@@ -15,7 +23,7 @@
  <valueQuantity>
   <value value="OBS-VALUE" />
   <unit  value="OBS-UNIT" />
-  <system value="OBS-SYSTEM" />
+  <system value="OBS-SYSTEM" /> <!-- fix -->
   <code   value="OBS-CODED-UNIT" />
  </valueQuantity>
 </Observation>

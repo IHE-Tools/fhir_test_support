@@ -1,42 +1,17 @@
 #!/usr/bin/perl
 
-sub read_text_file {
- my ($path) = @_;
-
- my $handle;
-
- unless (open $handle, "<:encoding(utf8)", $path) {
-   die "Could not open file '$path': $!\n";
- }
- chomp(my @lines = <$handle>);
- close $handle;
-
- return @lines;
-} 
-
-sub read_text_file_single_line {
- my ($path) = @_;
-
- my $handle;
-
- unless (open $handle, "<:encoding(utf8)", $path) {
-   die "Could not open file '$path': $!\n";
- }
- local $/ = undef;
- (my $line = <$handle>);
- close $handle;
-
- return $line;
-} 
+use strict;
+require common;
 
 sub check_args {
- if (scalar(@_) != 2) {
+ if (scalar(@_) != 3) {
   print STDERR
-	"Usage: <csv file> <observation template>\n";
+	"Usage: <csv file> <observation template> <map file>\n";
   die;
 
  }
 }
+
 
 sub map_code_to_category {
  my ($code_value) = @_;
@@ -78,7 +53,8 @@ sub lookup_system {
  my %h = (
    "2.16.840.1.113883.6.1" => "http://loinc.org",
    "2.16.840.1.113883.2.9.6.1.48.2" => "http://arsenal.it",
-   "2.16.840.1.113883.2.9.2.50901.6.1" => "http://arsenal.it/lab"
+   "2.16.840.1.113883.2.9.2.50901.6.1" => "http://arsenal.it/lab",
+   "2.16.840.1.113883.6.96" => " http://snomed.info/sct",
  );
 
  my $system_string = $h{$code_system_oid};
@@ -86,21 +62,6 @@ sub lookup_system {
  die "Could not lookup coding system for this OID: $code_system_oid"
 	if ($system_string eq "");
  return $system_string;
-}
-
-sub lookup_patient_resource {
- my ($doc_patient_id, $doc_pat_id_assigner) = @_;
-
- my %h = (
-   "1.3.6.1.4.1.21367.13.20.1000:2019.100.1" => "49"
- );
-
- my $key_value = $doc_pat_id_assigner . ":" . $doc_patient_id;
-
- $pat_resource = $h{$key_value};
- die "No Patient Resource found for this combination ($doc_pat_id_assigner, $doc_patient_id)\n" if ($pat_resource eq "");
-
- return $pat_resource;
 }
 
 sub lookup_unit {
@@ -118,48 +79,35 @@ sub lookup_unit {
  return $unit;
 }
 
-sub translate_to_date {
- my ($time_stamp) = @_;
-
- my $date_string =
-	substr($time_stamp, 0, 4) .
-	"-" .
-	substr($time_stamp, 4, 2) .
-	"-" .
-	substr($time_stamp, 6, 2);
- return $date_string;
-}
-
-sub xml_escape {
- my ($s) = @_;
- $s =~ s/&/&amp;/sg;
- $s =~ s/</&lt;/sg;
- $s =~ s/>/&gt;/sg;
- $s =~ s/"/&quot;/sg;
- return $s;
-}
-
-
 sub process_line {
- my ($line, $template) = @_;
+ my ($line, $template, %fhir_resource_map) = @_;
  my ($obs, $doc_patient_id, $doc_pat_id_assigner,
 	$code_value, $status, $time_stamp, $code_system_oid, 
 	$code_meaning, $obs_value, $obs_coded_unit) = (split /,/, $line);
  return if (!$obs);
  return if ($obs ne "Observation");
+ return if (!$time_stamp);
+ return if ($time_stamp eq "");
 
- $code_meaning = xml_escape($code_meaning);
- $obs_value    = xml_escape($obs_value);
+ $code_meaning = common::xml_escape($code_meaning);
+ $obs_value    = common::xml_escape($obs_value);
 
  my $code_system = lookup_system($code_system_oid);
- my $obs_date    = translate_to_date($time_stamp);
- my $patient_resource = lookup_patient_resource($doc_patient_id, $doc_pat_id_assigner);
+ my $obs_date    = common::translate_to_date($time_stamp);
+ my $patient_resource = common::lookup_patient_resource($doc_patient_id, $doc_pat_id_assigner, %fhir_resource_map);
 
  my $obs_system = "http://unitsofmeasure.org";
  my $obs_unit = lookup_unit ($code_value, $obs_coded_unit);
  my $category_xml = lookup_category_xml($code_value);
 
+ my $obs_system = "assign_oid_fix";
+
+ my $obs_guid = common::new_guid();
+
  my $output = $template;
+ $output =~ s/OBS-SYSTEM/$obs_system/g;
+ $output =~ s/OBS-GUID/$obs_guid/g;
+
  $output =~ s/PATIENT-REFERENCE/$patient_resource/g;
  $output =~ s/CATEGORY/$category_xml/g;
 
@@ -179,9 +127,10 @@ sub process_line {
 ## Main starts here
 
 check_args(@ARGV);
-my @lines = read_text_file($ARGV[0]);
-my $template = read_text_file_single_line($ARGV[1]);
+my @lines = common::read_text_file($ARGV[0]);
+my $template = common::read_text_file_single_line($ARGV[1]);
+my %fhir_resource_map = common::read_map($ARGV[2]);
 
 foreach my $line(@lines) {
- process_line($line, $template);
+ process_line($line, $template, %fhir_resource_map);
 }

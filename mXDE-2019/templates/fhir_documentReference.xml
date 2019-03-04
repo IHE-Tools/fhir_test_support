@@ -1,5 +1,13 @@
 <DocumentReference>
  <status value="current" />
+ <masterIdentifier>
+      <system value="urn:oid:1.3.6.1.4.1.21367.3000.1.6.99.fix"/>
+      <value value="DOCREF-GUID"/>
+      <assigner>
+         <reference value="1.3.6.1.4.1.21367.3000.1.6.99.fix"/>
+         <display value="DocumentReferenceCreator"/>
+      </assigner>
+ </masterIdentifier>
  <content>
  </content>
 </DocumentReference>

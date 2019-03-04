@@ -13,7 +13,7 @@
    <text>Assembler</text>
   </role>
   <whoReference>
-   <reference value="Device/194" />
+   <reference value="Device/DEVICE-REF" />
    <display   value="WUSTL Provenance Machine" />
   </whoReference>
  </agent>
@@ -27,7 +27,7 @@
    </coding>
   </role>
   <whatReference>
-   <reference value="DocumentReference/196" />
+   <reference value="DocumentReference/DOC-REF" />
   </whatReference>
  </entity>
 </Provenance>

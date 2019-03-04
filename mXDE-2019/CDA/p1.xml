@@ -36,7 +36,7 @@
 	<versionNumber value="1"/>
 	<recordTarget>
 		<patientRole>
-			<id extension="2019.100.1" root="1.3.6.1.4.1.21367.13.20.1000"/>
+			<id extension="IHEFACILITY-2019.1" root="1.3.6.1.4.1.21367.3000.1.6"/>
 			<addr>
 				<streetAddressLine>4525 Scott Ave</streetAddressLine>
 				<city>St. Louis</city>
