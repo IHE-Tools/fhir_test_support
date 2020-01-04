@@ -53,6 +53,17 @@ sub read_map {
  return %map;
 }
 
+sub read_key_value_map {
+ my ($map_file) = @_;
+ my @lines = common::read_text_file($map_file);
+ my %map;
+ foreach my $line(@lines) {
+  my ($key, $value) = (split /\t/, $line);
+  $map{$key} = $value;
+ }
+ return %map;
+}
+
 sub new_guid {
  my $guid = Data::GUID->new;
  return $guid->as_string;

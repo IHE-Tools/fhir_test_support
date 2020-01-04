@@ -3,6 +3,7 @@
   <reference value="TARGET-REF" />
  </target>
  <recorded value="PROVENANCE-RECORDED" />
+ <policy   value="urn:ihe:pcc:qedm:2017:document-provenance-policy" />
  <agent>
   <role>
    <coding>
@@ -19,13 +20,7 @@
  </agent>
 
  <entity>
-  <role>
-   <coding>
-    <system  value="http://hl7.org/fhir/provenance-entity-role" />
-    <code    value="source" />
-    <display value="Source" />
-   </coding>
-  </role>
+  <role value="source" />
   <whatReference>
    <reference value="DocumentReference/DOC-REF" />
   </whatReference>

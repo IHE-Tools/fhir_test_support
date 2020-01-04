@@ -12,6 +12,7 @@ initialize_folders () {
 	fhir_encounters	\
 	fhir_observations	\
 	fhir_provenance	\
+	mcsd	\
 	tmp	\
 	; do
   rm -r ../$f
@@ -23,6 +24,16 @@ initialize_map () {
  touch $1
  rm -f $1
  touch $1
+
+}
+
+wget_mcsd_resources () {
+ touch ../mcsd
+ rm -r ../mcsd
+ mkdir ../mcsd
+
+ wget --recursive -nd -P ../mcsd -o /tmp/wget.log	\
+	ftp://ftp.ihe.net/Connectathon/test_data/ITI-profiles/mCSD-test-data/mCSD_FHIR_Resources
 
 }
 
@@ -113,17 +124,19 @@ map_patient() {
 initialize_folders
 initialize_map $MAP
 
-post_device
-map_device $MAP
+wget_mcsd_resources
 
-post_location
-map_location $MAP
+#post_device
+#map_device $MAP
+#
+#post_location
+#map_location $MAP
+#
+#post_organization
+#map_organization $MAP
 
-post_organization
-map_organization $MAP
-
-for patient_resource in ../fhir_patients/* ; do
- post_patient $patient_resource
- map_patient $MAP
-done
+#for patient_resource in Patient-2703 ; do
+# post_patient ../fhir_patients/$patient_resource.xml
+# map_patient $MAP
+#done
 
