@@ -1,0 +1,49 @@
+<Encounter xmlns="http://hl7.org/fhir">
+   <status value="finished"/>
+   <subject>
+      <reference value="Patient/251"/>
+   </subject>
+   <type>
+      <coding>
+         <system value="http://connectathon.ihe"/>
+         <code value="urgent"/>
+         <display value="Urgent Care"/>
+      </coding>
+      <text value="Urgent Care"/>
+   </type>
+   <serviceType>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/service-type"/>
+         <code value="117"/>
+         <display value="Emergency medical"/>
+      </coding>
+      <text value="Emergency medical"/>
+   </serviceType>
+<!--   <participant>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+            <code value="PRFR"/>
+            <display value="primary performer"/>
+         </coding>
+      </type>
+   </participant>-->
+   <period>
+      <start value="2016-03-01T13:30:00"/>
+      <end value="2016-03-01T15:30:00"/>
+   </period>
+   <reason>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="3368006"/>
+         <display value="Dull chest pain"/>
+      </coding>
+   </reason>
+   <!-- <diagnosis></diagnosis>-->
+<!--   <location>
+      <status value="completed"/>
+   </location>
+   <serviceProvider>
+      <reference value="Organization/250"/>
+   </serviceProvider>-->
+</Encounter>

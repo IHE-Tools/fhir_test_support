@@ -1,0 +1,42 @@
+<Procedure xmlns="http://hl7.org/fhir">
+   <status value="completed"/>
+   <category>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="103693007"/>
+         <display value="Diagnostic procedure"/>
+      </coding>
+   </category>
+   <code>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="2491000087104"/>
+         <display value="Magnetic resonance imaging of right knee"/>
+      </coding>
+   </code>
+   <subject>
+      <reference value="Patient/251"/>
+   </subject>
+   <performedDateTime value="2012-08-25"/>
+   <reasonCode>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="239720000"/>
+         <display value="Tear of meniscus of knee"/>
+      </coding>
+   </reasonCode>
+   <bodySite>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="6757004"/>
+         <display value="Structure of right knee region"/>
+      </coding>
+   </bodySite>
+   <outcome>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="385669000"/>
+         <display value="Successful"/>
+      </coding>
+   </outcome>
+</Procedure>

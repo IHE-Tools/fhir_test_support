@@ -1,0 +1,40 @@
+<Condition xmlns="http://hl7.org/fhir">
+   <clinicalStatus value="active"/>
+   <verificationStatus value="confirmed"/>
+   <category>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+         <code value="problem-list-item"/>
+         <display value="Problem List Item"/>
+      </coding>
+      <text value="Problem List Item"/>
+   </category>
+   <severity>
+      <coding>
+         <system value="http://snomed.info/ct"/>
+         <code value="255604002"/>
+         <display value="Mild"/>
+      </coding>
+      <text value="Mild"/>
+   </severity>
+   <code>
+      <coding>
+         <system value="http://snomed.info/ct"/>
+         <code value="194828000"/>
+         <display value="Angina"/>
+      </coding>
+      <text value="Angina"/>
+   </code>
+   <bodySite>
+      <coding>
+         <system value="http://snomed.info/ct"/>
+         <code value="80891009"/>
+         <display value="Heart"/>
+      </coding>
+      <text value="Entire lung"/>
+   </bodySite>
+   <subject>
+      <reference value="Patient/251"/>
+   </subject>
+   <onsetDateTime value="2007-04-14" />
+</Condition>

@@ -1,0 +1,50 @@
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <status value="active"/>
+  <category value="community"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/ct"/>
+      <code value="376928006"/>
+      <display value="Albuterol 90mcg/inh aerosol"/>
+    </coding>
+    <text value="Albuterol 90mcg/inh aerosol"/>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/251"/>
+  </subject>
+  <effectiveDateTime value="2011-01-03"/>
+  <dateAsserted value="2011-01-03"/>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/ct"/>
+      <code value="195967001"/>
+      <display value="Asthma"/>
+    </coding>
+    <text value="Asthma"/>
+  </reasonCode>
+
+  <dosage>
+    <text value="2 puffs q6 hours PRN wheezing"/>
+    <asNeededBoolean value="true"/>
+    <site>
+      <coding>
+        <system value="http://snomed.info/ct"/>
+        <code value="181216001"/>
+        <display value="Entire lung"/>
+      </coding>
+    </site>
+    <route>
+      <coding>
+        <system value="http://snomed.info/ct"/>
+        <code value="447694001"/>
+        <display value="Respiratory tract route"/>
+      </coding>
+    </route>
+    <method>
+      <coding>a <system value="http://snomed.info/ct"/>
+        <code value="421134003"/>
+        <display value="Inhale"/>
+      </coding>
+    </method>
+  </dosage>
+</MedicationStatement>

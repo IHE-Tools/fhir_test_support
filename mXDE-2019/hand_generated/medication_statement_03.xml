@@ -1,0 +1,29 @@
+<MedicationStatement xmlns="http://hl7.org/fhir">
+  <status value="active"/>
+  <category value="community"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/ct"/>
+      <code value="318434003"/>
+      <display value="Atenolol 25mg tablet"/>
+    </coding>
+    <text value="Atenolol 25mg tablet"/>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/251"/>
+  </subject>
+  <effectiveDateTime value="2012-03-18"/>
+  <dateAsserted value="2012-03-18"/>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/ct"/>
+      <code value="38341003"/>
+      <display value="Hypertensive disorder, systemic arterial"/>
+    </coding>
+    <text value="Hypertensive disorder, systemic arterial"/>
+  </reasonCode>
+
+  <dosage>
+    <text value="1 every 12 hours"/>
+  </dosage>
+</MedicationStatement>
