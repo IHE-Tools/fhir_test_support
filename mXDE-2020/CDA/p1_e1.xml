@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Credits
+   + This document started with the C-CDA_R2.1_CCD.xml file created by
+     Lantana Consulting Group, LLC and distributed by HL7 as part of the C-CDA release.
+ Document History:
+   + 2019.02.15 Trimmed original document to reflect observations needed for mXDE testing (2019).
+                First version is most certainly not complete.
+ Disclaimers:
+   + Not a real patient
+   + Values not actually measured
+   + Values may not reflect plausible clinical data
+ -->
+<ClinicalDocument
+  xmlns="urn:hl7-org:v3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:sdtc="urn:hl7-org:sdtc">
+	<realmCode code="US"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- CCD template ID-->
+	<templateId root="2.16.840.1.113883.10.20.22.1.2" extension="2015-08-01"/>
+	<templateId root="2.16.840.1.113883.10.20.22.1.2"/>
+	<!-- Globally unique identifier for the document  -->
+	<id extension="GUID" root="FIX"/>
+	<code code="34133-9" displayName="Summarization of Episode Note"
+		codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+
+	<title>Patient Chart Summary</title>
+	<effectiveTime value="201704011200-0600"/>
+	<confidentialityCode code="N" displayName="normal" codeSystem="2.16.840.1.113883.5.25"
+		codeSystemName="Confidentiality"/>
+	<languageCode code="en-US"/>
+	<setId extension="sTT988" root="2.16.840.1.113883.19.5.99999.19"/>
+
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="IHEFACILITY-997" root="urn:oid:1.3.6.1.4.1.21367.3000.1.6"/>
+			<addr>
+				<streetAddressLine>820 JORIE BLVD</streetAddressLine>
+				<city>CHICAGO</city>
+				<state>IL</state>
+				<postalCode>60523</postalCode>
+				<country>USA</country>
+			</addr>
+
+			<telecom value="tel:+1(314)555-0000"/>
+			<patient>
+				<name>
+					<given>Steve</given>
+					<family>FARNSWORTH</family>
+				</name>
+				<administrativeGenderCode code="M" displayName="Male"
+					codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender"/>
+				<birthTime value="19781207"/>
+
+			</patient>
+		</patientRole>
+	</recordTarget>
+
+	<author>
+		<time value="201704011200-0600"/>
+		<assignedAuthor>
+			<id extension="2019.200.1" root="1.3.6.1.4.1.21367.13.20.1000"/>
+			<assignedPerson>
+				<name>
+					<given>Moe</given>
+					<family>Howard</family>
+					<suffix>M.D.</suffix>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="WUSTL" root="1.3.6.1.4.1.21367.13.20.1000"/>
+				<name>WU Physician Group</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+	<component>
+		<structuredBody>
+			
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.22.2.3.1" extension="2015-08-01"/>
+					<templateId root="2.16.840.1.113883.10.20.22.2.3.1"/>
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RESULTS"/>
+					<title>RESULTS</title>
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Result Type</th>
+									<th>Result Value</th>
+									<th>Relevant Reference Range</th>
+									<th>Interpretation</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="result1">Blood Glucose</td>
+									<td ID="resultvalue1">60 mg/dL</td>
+									<td ID="referencerange1">Normal range is &lt; 100 mg/dL</td>
+									<td>Normal</td>
+									<td>02/17/2015</td>
+								</tr>
+								<tr>
+									<td ID="result2">Blood Glucose</td>
+									<td ID="resultvalue1">65 mg/dL</td>
+									<td ID="referencerange1">Normal range is &lt; 100 mg/dL</td>
+									<td>Normal</td>
+									<td>04/01/2017</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+
+
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+							<id root="GUID"/>
+							<code code="271062006" displayName="Fasting blood glucose measurement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low  value="201502171155-0600"/>
+								<high value="201502171155-0600"/>
+							</effectiveTime>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+									<id root="GUID"/>
+									<code code="32016-8" displayName="Glucose [Mass/volume] in Capillary blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+									<statusCode code="completed"/>
+									<effectiveTime value="201502171155-0600"/>
+									<value xsi:type="PQ" value="60" unit="mg/dL"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					
+					
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+							<id root="GUID"/>
+							<code code="271062006" displayName="Fasting blood glucose measurement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low  value="201704011158-0600"/>
+								<high value="201704011158-0600"/>
+							</effectiveTime>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+									<id root="GUID"/>
+									<code code="32016-8" displayName="Glucose [Mass/volume] in Capillary blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+									<statusCode code="completed"/>
+									<effectiveTime value="201704011158-0600"/>
+									<value xsi:type="PQ" value="65" unit="mg/dL"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>		
+					
+				</section>
+			</component>
+
+			<component>
+				<section>
+					<!-- ** Vital Signs Section (entries required) (V3) ** -->
+					<templateId root="2.16.840.1.113883.10.20.22.2.4.1" extension="2015-08-01"/>
+					<templateId root="2.16.840.1.113883.10.20.22.2.4.1"/>
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="VITAL SIGNS"/>
+					<title>VITAL SIGNS</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th align="right">Date / Time: </th>
+									<th>Feb 2, 2015</th>
+									<th>Mar 1, 2016</th>
+									<th>Apr 1, 2017</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th align="left">Height</th>
+									<td ID="vit1a">183 cm</td>
+									<td ID="vit1b">182 cm</td>
+									<td ID="vit1c">183 cm</td>
+								</tr>
+								<tr>
+									<th align="left">Weight</th>
+									<td ID="vit3a">82 kg</td>
+									<td ID="vit3b">80 kg</td>
+									<td ID="vit3c">78 kg</td>
+								</tr>
+								<tr>
+									<th align="left">Blood Pressure</th>
+									<td ID="vit5a">110/70</td>
+									<td ID="vit5b">100/60</td>
+									<td ID="vit5c">105/70</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- ** Vital signs organizer (V3) ** -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.26"
+								extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.26"/>
+							<id root="GUID"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low  value="20150217"/>
+								<high value="20150217"/>
+							</effectiveTime>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Height"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20150217"/>
+									<value xsi:type="PQ" value="183" unit="cm"/>
+								</observation>
+							</component>
+
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"
+										displayName="Patient Body Weight - Measured"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20150217"/>
+									<value xsi:type="PQ" value="82" unit="kg"/>
+								</observation>
+							</component>
+
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Intravascular Systolic"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20150217"/>
+									<value xsi:type="PQ" value="110" unit="mm[Hg]"/>
+								</observation>
+							</component>
+
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="BP Diastolic"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20150217"/>
+									<value xsi:type="PQ" value="70" unit="mm[Hg]"/>
+								</observation>
+							</component>
+
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Heart rate"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20150217"/>
+									<value xsi:type="PQ" value="70" unit="/min"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+
+
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- ** Vital signs organizer (V3) ** -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.26"
+								extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.26"/>
+							<id root="GUID"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low  value="20160301"/>
+								<high value="20160301"/>
+							</effectiveTime>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Height"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20160301"/>
+									<value xsi:type="PQ" value="182" unit="cm"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"
+										displayName="Patient Body Weight - Measured"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20160301"/>
+									<value xsi:type="PQ" value="80" unit="kg"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Intravascular Systolic"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20160301"/>
+									<value xsi:type="PQ" value="100" unit="mm[Hg]"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="BP Diastolic"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20160301"/>
+									<value xsi:type="PQ" value="60" unit="mm[Hg]"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Heart rate"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20160301"/>
+									<value xsi:type="PQ" value="65" unit="/min"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					
+					
+					<entry typeCode="DRIV">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- ** Vital signs organizer (V3) ** -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.26"
+								extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.26"/>
+							<id root="GUID"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED CT" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low  value="20170401"/>
+								<high value="20170401"/>
+							</effectiveTime>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Height"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20170401"/>
+									<value xsi:type="PQ" value="183" unit="cm"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="3141-9" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"
+										displayName="Patient Body Weight - Measured"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20170401"/>
+									<value xsi:type="PQ" value="78" unit="kg"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8480-6" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Intravascular Systolic"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20170401"/>
+									<value xsi:type="PQ" value="105" unit="mm[Hg]"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8462-4" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="BP Diastolic"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20170401"/>
+									<value xsi:type="PQ" value="70" unit="mm[Hg]"/>
+								</observation>
+							</component>
+							
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"
+										extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+									<id root="GUID"/>
+									<code code="8867-4" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Heart rate"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20170401"/>
+									<value xsi:type="PQ" value="60" unit="/min"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+			<component>
+				<section>
+					<!-- Encounters -->
+					<templateId root="2.16.840.1.113883.10.20.22.2.22.1" extension="2015-08-01"/>
+					<templateId root="2.16.840.1.113883.10.20.22.2.22.1"/>
+					<code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of encounters"/>
+					<title>ENCOUNTERS</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Encounter</th>
+									<th>Performer</th>
+									<th>Location</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td ID="Encounter1">Annual Checkup</td>
+									<td>Dr. Moe Howard</td>
+									<td>Care Service Location fix</td>
+									<td>February 17, 2015</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+
+					<entry typeCode="DRIV">
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- Encounter Activity (V3) -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.49"/>
+							<id root="GUID"/>
+							<code code="99213" displayName="Office outpatient visit 15 minutes" codeSystemName="CPT-4" codeSystem="2.16.840.1.113883.6.12">
+								<originalText>
+									<reference value="#Encounter1"/>
+								</originalText>
+							</code>
+							<effectiveTime value="201502171155-0600"/>
+							<performer>
+								<assignedEntity>
+									<!-- Provider NPI "333444555" -->
+									<id extension="333444555" root="2.16.840.1.113883.4.6"/>
+									<code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+								</assignedEntity>
+							</performer>
+							<participant typeCode="LOC">
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.10.20.22.4.32"/>
+									<!-- Service Delivery Location template -->
+									<code code="1160-1" codeSystem="2.16.840.1.113883.6.259" codeSystemName="HL7 HealthcareServiceLocation" displayName="Urgent Care Center"/>
+									<addr>
+										<streetAddressLine>1 Barnes Plaza</streetAddressLine>
+										<city>St. Louis</city>
+										<state>MO</state>
+										<postalCode>63110</postalCode>
+										<country>US</country>
+									</addr>
+									<telecom use="WP" value="tel: +1(555)555-1030"/>
+									<playingEntity classCode="PLC">
+										<name>WUSTL Physician Group</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<!-- ** Indication (V2) ** -->
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.19" extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.19"/>
+									<id root="GUID" extension="45665"/>
+									<!-- code is required; MAY be selected from ValueSet Problem Type (LOINC) urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1098-31229) -->
+									<code code="404684003" displayName="Finding" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96">
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="201502171155-0600"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="233604007" displayName="Pneumonia" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<entry typeCode="DRIV">
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- Encounter Activity (V3) -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.49"/>
+							<id root="GUID"/>
+							<code code="99213" displayName="Office outpatient visit 15 minutes" codeSystemName="CPT-4" codeSystem="2.16.840.1.113883.6.12">
+								<originalText>
+									<reference value="#Encounter1"/>
+								</originalText>
+							</code>
+							<effectiveTime value="201502171155-0600"/>
+							<performer>
+								<assignedEntity>
+									<!-- Provider NPI "333444555" -->
+									<id extension="333444555" root="2.16.840.1.113883.4.6"/>
+									<code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+								</assignedEntity>
+							</performer>
+							<participant typeCode="LOC">
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.10.20.22.4.32"/>
+									<!-- Service Delivery Location template -->
+									<code code="1160-1" codeSystem="2.16.840.1.113883.6.259" codeSystemName="HL7 HealthcareServiceLocation" displayName="Urgent Care Center"/>
+									<addr>
+										<streetAddressLine>1 Barnes Plaza</streetAddressLine>
+										<city>St. Louis</city>
+										<state>MO</state>
+										<postalCode>63110</postalCode>
+										<country>US</country>
+									</addr>
+									<telecom use="WP" value="tel: +1(555)555-1030"/>
+									<playingEntity classCode="PLC">
+										<name>WUSTL Physician Group</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<!-- ** Indivcation (V2) ** -->
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.19" extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.19"/>
+									<id root="GUID" extension="45665"/>
+									<!-- code is required; MAY be selected from ValueSet Problem Type (LOINC) urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1098-31229) -->
+									<code code="404684003" displayName="Finding" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96">
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="201502171155-0600"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="233604007" displayName="Pneumonia" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					<entry typeCode="DRIV">
+						<encounter classCode="ENC" moodCode="EVN">
+							<!-- Encounter Activity (V3) -->
+							<templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/>
+							<templateId root="2.16.840.1.113883.10.20.22.4.49"/>
+							<id root="GUID"/>
+							<code code="99213" displayName="Office outpatient visit 15 minutes" codeSystemName="CPT-4" codeSystem="2.16.840.1.113883.6.12">
+								<originalText>
+									<reference value="#Encounter1"/>
+								</originalText>
+							</code>
+							<effectiveTime value="201502171155-0600"/>
+							<performer>
+								<assignedEntity>
+									<!-- Provider NPI "333444555" -->
+									<id extension="333444555" root="2.16.840.1.113883.4.6"/>
+									<code code="59058001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="General Physician"/>
+								</assignedEntity>
+							</performer>
+							<participant typeCode="LOC">
+								<participantRole classCode="SDLOC">
+									<templateId root="2.16.840.1.113883.10.20.22.4.32"/>
+									<!-- Service Delivery Location template -->
+									<code code="1160-1" codeSystem="2.16.840.1.113883.6.259" codeSystemName="HL7 HealthcareServiceLocation" displayName="Urgent Care Center"/>
+									<addr>
+										<streetAddressLine>1 Barnes Plaza</streetAddressLine>
+										<city>St. Louis</city>
+										<state>MO</state>
+										<postalCode>63110</postalCode>
+										<country>US</country>
+									</addr>
+									<telecom use="WP" value="tel: +1(555)555-1030"/>
+									<playingEntity classCode="PLC">
+										<name>WUSTL Physician Group</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="RSON">
+								<!-- ** Indivcation (V2) ** -->
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.19" extension="2014-06-09"/>
+									<templateId root="2.16.840.1.113883.10.20.22.4.19"/>
+									<id root="GUID" extension="45665"/>
+									<!-- code is required; MAY be selected from ValueSet Problem Type (LOINC) urn:oid:2.16.840.1.113883.3.88.12.3221.7.2 STATIC 2014-09-02 (CONF:1098-31229) -->
+									<code code="404684003" displayName="Finding" codeSystemName="SNOMED-CT" codeSystem="2.16.840.1.113883.6.96">
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<low value="201502171155-0600"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="233604007" displayName="Pneumonia" codeSystem="2.16.840.1.113883.6.96"/>
+								</observation>
+							</entryRelationship>
+						</encounter>
+					</entry>
+					
+
+				</section>
+			</component>
+			
+
+		</structuredBody>
+	</component>
+</ClinicalDocument>

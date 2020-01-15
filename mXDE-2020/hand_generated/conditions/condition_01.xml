@@ -1,0 +1,41 @@
+<Condition xmlns="http://hl7.org/fhir">
+   <clinicalStatus value="resolved"/>
+   <verificationStatus value="confirmed"/>
+   <category>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+         <code value="problem-list-item"/>
+         <display value="Problem List Item"/>
+      </coding>
+      <text value="Problem List Item"/>
+   </category>
+   <severity>
+      <coding>
+         <system value="http://snomed.info/ct"/>
+         <code value="255604002"/>
+         <display value="Mild"/>
+      </coding>
+      <text value="Mild"/>
+   </severity>
+   <code>
+      <coding>
+         <system value="http://snomed.info/ct"/>
+         <code value="233604007"/>
+         <display value="Pneumonia"/>
+      </coding>
+      <text value="Pneumonia"/>
+   </code>
+   <bodySite>
+      <coding>
+         <system value="http://snomed.info/ct"/>
+         <code value="181216001"/>
+         <display value="Entire lung"/>
+      </coding>
+      <text value="Entire lung"/>
+   </bodySite>
+   <subject>
+      <reference value="Patient/4"/>
+   </subject>
+   <onsetDateTime value="1998-03-10" />
+   <abatementDateTime value="1998-03-16" />
+</Condition>

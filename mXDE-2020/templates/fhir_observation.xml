@@ -1,0 +1,29 @@
+<Observation xmlns="http://hl7.org/fhir">
+ <identifier>
+  <system value="urn:oid:OBS-SYSTEM"/> <!-- fix -->
+  <value value="OBS-GUID"/>
+  <assigner>
+   <reference value="OBS-SYSTEM"/> <!-- fix -->
+   <display value="Observation Creator"/>
+  </assigner>
+ </identifier>
+ <status value="final" />
+ CATEGORY
+ <code>
+  <coding>
+   <system  value="CODE-SYSTEM" />
+   <code    value="CODE-VALUE" />
+   <display value="CODE-DISPLAY" />
+  </coding>
+ </code>
+ <subject>
+  <reference value="Patient/PATIENT-REFERENCE" />
+ </subject>
+ <effectiveDateTime value="OBS-DATE" />
+ <valueQuantity>
+  <value value="OBS-VALUE" />
+  <unit  value="OBS-UNIT" />
+  <system value="OBS-SYSTEM" /> <!-- fix -->
+  <code   value="OBS-CODED-UNIT" />
+ </valueQuantity>
+</Observation>

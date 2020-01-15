@@ -1,0 +1,42 @@
+<Procedure xmlns="http://hl7.org/fhir">
+   <status value="completed"/>
+   <category>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="387713003"/>
+         <display value="Surgical procedure"/>
+      </coding>
+   </category>
+   <code>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="233405004"/>
+         <display value="Insertion of carotid artery stent"/>
+      </coding>
+   </code>
+   <subject>
+      <reference value="Patient/104"/>
+   </subject>
+   <performedDateTime value="2007-04-14"/>
+   <reasonCode>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="69798007"/>
+         <display value="Carotid artery obstruction"/>
+      </coding>
+   </reasonCode>
+   <bodySite>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="69105007"/>
+         <display value="Carotid artery structure"/>
+      </coding>
+   </bodySite>
+   <outcome>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="385669000"/>
+         <display value="Successful"/>
+      </coding>
+   </outcome>
+</Procedure>

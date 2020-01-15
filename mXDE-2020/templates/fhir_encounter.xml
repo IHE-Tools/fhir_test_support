@@ -1,0 +1,79 @@
+<Encounter xmlns="http://hl7.org/fhir">
+ <identifier>
+  <system value="urn:oid:ENC-ID-SYSTEM"/>
+  <value value="ENC-GUID"/>
+  <assigner>
+   <reference value="ENC-ID-SYSTEM"/>
+   <display value="Encounter Creator"/>
+  </assigner>
+ </identifier>
+ <status value="finished" />
+ <class>
+  <coding>
+   <system  value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+   <code    value="ENCOUNTERClass-CODE"/>
+   <display value="ENCOUNTERClass-DISPLAY"/>
+  </coding>
+ </class>
+ <!-- The value set for Encounter.type is almost empty -->
+ <!-- We will ignore type -->
+<!-- <type>
+  <coding>
+   <system  value="" />
+   <code    value="" />
+   <display value="" />
+  </coding>
+ </type>-->
+ 
+ <!-- Service type: Use a hard-coded value for now -->
+ <!-- See http://hl7.org/fhir/2018Sep/valueset-service-type.html -->
+ <serviceType>
+  <coding>
+   <system  value="http://terminology.hl7.org/CodeSystem/service-type" />
+   <code    value="407" />
+   <display value="Physical" />
+  </coding>
+ </serviceType>
+
+ <subject>
+  <reference value="Patient/PATIENT-REFERENCE" />
+ </subject>
+
+ <participant>
+  <type>
+   <coding>
+    <system  value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" />
+    <code    value="PRFR" />
+    <display value="primary performer" />
+   </coding>
+  </type>
+
+  <individualPractitioner>
+   <name>
+    <text value = "Dr. Moe Howard" />
+   </name>
+  </individualPractitioner>
+ </participant>
+<!-- <period>
+  <start value="ENCOUNTER-START" />
+  <end   value="ENCOUNTER-END" />
+ </period>-->
+
+ <!-- See http://hl7.org/fhir/2018Sep/encounter.html -->
+ <reason>
+  <coding>
+   <system  value="http://snomed.info/sct" />
+   <code    value="REASON-CODE" />
+   <display value="REASON-DISPLAY" />
+  </coding>
+ </reason>
+
+<!-- <diagnosis></diagnosis>-->
+ <location>
+  <reference value="Location/LOCATION-REFERENCE" />
+  <status value="completed" />
+ </location>
+ <serviceProvider>
+  <reference value="Organization/ORGANIZATION-REFERENCE" />
+ </serviceProvider>
+</Encounter>

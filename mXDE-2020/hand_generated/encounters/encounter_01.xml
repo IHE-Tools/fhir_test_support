@@ -1,0 +1,50 @@
+<Encounter xmlns="http://hl7.org/fhir">
+   <status value="finished"/>
+   <subject>
+      <reference value="Patient/104"/>
+   </subject>
+   <type>
+      <coding>
+         <system value="http://connectathon.ihe"/>
+         <code value="gp"/>
+         <display value="General Practitioner Office Visit"/>
+      </coding>
+      <text value="General Practitioner Office Visit"/>
+   </type>
+   <serviceType>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/service-type"/>
+         <code value="124"/>
+         <display value="General Practice"/>
+      </coding>
+      <text value="General Practice"/>
+   </serviceType>
+   <participant>
+      <type>
+         <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+            <code value="PRFR"/>
+            <display value="primary performer"/>
+         </coding>
+      </type>
+   </participant>
+   <period>
+      <start value="2015-02-17T12:30:00"/>
+      <end value="2015-02-17T12:50:00"/>
+   </period>
+   <!-- See http://hl7.org/fhir/2018Sep/encounter.html -->
+   <reason>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="5902003"/>
+         <display value="History and physical examination, complete"/>
+      </coding>
+   </reason>
+   <!-- <diagnosis></diagnosis>-->
+<!--   <location>
+      <status value="completed"/>
+   </location>
+   <serviceProvider>
+      <reference value="Organization/250"/>
+   </serviceProvider>-->
+</Encounter>

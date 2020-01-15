@@ -1,0 +1,48 @@
+<Patient xmlns="http://hl7.org/fhir">
+   <identifier>
+      <system value="urn:oid:1.3.6.1.4.1.21367.13.20.1000"/>
+      <value value="IHERED-2019.1"/>
+      <assigner>
+         <reference value="1.3.6.1.4.1.21367.13.20.1000"/>
+         <display value="IHERED"/>
+      </assigner>
+   </identifier>
+   <identifier>
+      <system value="urn:oid:1.3.6.1.4.1.21367.13.20.2000"/>
+      <value value="IHEGREEN-2019.1"/>
+      <assigner>
+         <reference value="1.3.6.1.4.1.21367.13.20.2000"/>
+         <display value="IHEGREEN"/>
+      </assigner>
+   </identifier>
+   <identifier>
+      <system value="urn:oid:1.3.6.1.4.1.21367.13.20.3000"/>
+      <value value="IHEBLUE-2019.1"/>
+      <assigner>
+         <reference value="1.3.6.1.4.1.21367.13.20.3000"/>
+         <display value="IHEBLUE"/>
+      </assigner>
+   </identifier>
+   <identifier>
+      <system value="urn:oid:1.3.6.1.4.1.21367.3000.1.6"/>
+      <value value="IHEFACILITY-2019.1"/>
+      <assigner>
+         <reference value="1.3.6.1.4.1.21367.3000.1.6"/>
+         <display value="IHEFACILITY"/>
+      </assigner>
+   </identifier>
+   <active value="true"/>
+   <name>
+      <family value="Mxde"/>
+      <given value="One"/>
+   </name>
+   <gender value="male"/>
+   <birthDate value="1960-12-13"/>
+   <address>
+      <line value="5 Rue du Voyageur"/>
+      <city value="Roissy-en-France"/>
+      <state value="Île-de-France"/>
+      <postalCode value="95700"/>
+      <country value="FRA"/>
+   </address>
+</Patient>

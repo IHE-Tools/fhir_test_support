@@ -1,0 +1,16 @@
+Regression tests are run using the WUSTL_RESTful_CLI code.
+* You will always be in the root folder.
+* You will run regression tests like this:
+  ./restful_tests/regression/scripts/xxxxx.sh
+
+QEDm / Conditions
+  edit restful_tests/qedm/server/QEDM-1110J/test_plan.txt
+  Change the value for the FHIR patient id in the query line (patient=xxx)
+
+  ./restful_tests/regression/scripts/qedm_condition.sh
+  open /tmp/qedm/server/condition/summary.txt
+  open /tmp/qedm/server/condition/QEDM-1110J.xlsx
+    The summary and spreadsheet should indicate no errors
+    If you see errors, then open for more details
+       /tmp/qedm/server/condition/QEDM-1110J.txt
+
